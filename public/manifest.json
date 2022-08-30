@@ -1,0 +1,33 @@
+{
+	"name": "On-Chain Wallet",
+	"description": "Web3 password manager extension",
+	"version": "1.0",
+	"manifest_version": 3,
+	"permissions": [
+		"storage",
+		"activeTab"
+	],
+	"background": {
+		"service_worker": "./static/js/background.js"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": [
+				"./static/js/content.js"
+			]
+		}
+	],
+	"action": {
+		"default_popup": "index.html",
+		"default_title": "Open the popup"
+	},
+	"icons": {
+		"16": "logo/16.png",
+		"32": "logo/32.png",
+		"48": "logo/48.png",
+		"128": "logo/128.png"
+	}
+}
